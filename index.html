@@ -29,6 +29,9 @@
       background-color: #ffffff;
       color: #000000;
     }
+    .modal-body {
+      color: #000000;
+    }
   </style>
 </head>
 <body>
@@ -40,7 +43,7 @@
         <label for="fullName">Full Name:</label>
         <div class="input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+            <span class="input-group-text"><i class="bi bi-person-fill" aria-hidden="true"></i></span>
           </div>
           <input type="text" class="form-control" id="fullName" name="fullName" required>
         </div>
@@ -49,7 +52,7 @@
         <label for="email">Email Address:</label>
         <div class="input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+            <span class="input-group-text"><i class="bi bi-envelope-fill" aria-hidden="true"></i></span>
           </div>
           <input type="email" class="form-control" id="email" name="email" required>
         </div>
@@ -67,7 +70,10 @@
       </div>
       <div class="form-group form-check">
         <input type="checkbox" class="form-check-input" id="termsCheck" name="termsCheck" required>
-        <label class="form-check-label" for="termsCheck">I have read and agree to the terms and conditions.</label>
+        <label class="form-check-label" for="termsCheck">
+          I have read and agree to the 
+          <a href="#" data-toggle="modal" data-target="#termsModal">terms and conditions</a>.
+        </label>
       </div>
       <div class="form-group">
         <label for="paymentAmount">Payment Amount (INR):</label>
@@ -83,6 +89,46 @@
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+  </div>
+
+  <!-- Modal for terms and conditions -->
+  <div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="termsModalLabel">Terms and Conditions</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h6>Food Purchase</h6>
+          <p>Participants are required to purchase their own food during the event. Food stalls will be available on-site, offering a variety of meals and snacks for purchase.</p>
+          <h6>Event Participation</h6>
+          <p>By registering for TechKerala24-25, participants agree to abide by all event rules and regulations. The organizers reserve the right to make changes to the event schedule and content. All payments are non-refundable.</p>
+          <h6>AI Challenge</h6>
+          <p>All students participating in TechKerala24-25 must take part in the special "Crack the Game with AI" challenge. This is a mandatory activity designed to enhance learning and showcase AI skills.</p>
+          <h6>Compliance and Conduct</h6>
+          <p>Participants are expected to maintain professional conduct at all times during the event. Any form of harassment, discrimination, or disruptive behavior will not be tolerated and may result in immediate expulsion from the event without refund.</p>
+          <h6>Intellectual Property</h6>
+          <p>All ideas, projects, and intellectual property developed during TechKerala24-25 remain the property of the respective creators. However, participants agree to allow the organizers to use descriptions and images of their work for promotional purposes.</p>
+          <h6>Bring Your Own Laptop</h6>
+          <p>All developers and students are required to bring their own laptops to participate in the challenges and activities. The event will not provide any computers or laptops.</p>
+          <h6>Support for Startups</h6>
+          <p>Startups attending the event can seek assistance from developers to help realize their business ideas. Developers are available for hire, and teams can be formed on-site through the event's collaboration platform, Lelam.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sponsorship Information -->
+  <div class="container mt-5">
+    <h2 class="mb-4">Sponsorship Opportunities</h2>
+    <p>If you are a business owner interested in sponsoring our event, we offer various sponsorship packages tailored to meet your needs and budget. Sponsorship not only provides you with exposure to a diverse audience but also demonstrates your commitment to supporting technology and innovation.</p>
+    <p>For sponsorship inquiries, please contact us at <a href="mailto:communityfirefox87@gmail.com">communityfirefox87@gmail.com</a>.</p>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
