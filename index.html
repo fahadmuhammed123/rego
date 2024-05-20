@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechKerala24-25 Registration</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #000000;
+      color: #ffffff;
+    }
+    .form-control {
+      background-color: #000000;
+      color: #ffffff;
+    }
+    label {
+      color: #ffffff;
+    }
+    select, input[type="text"], input[type="email"] {
+      background-color: #ffffff;
+      color: #000000;
+    }
+    option {
+      color: #000000;
+    }
+    button {
+      background-color: #ffffff;
+      color: #000000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="mb-4">TechKerala24-25 Registration Form</h2>
+    <p>TechKerala24-25 is an exciting event aimed at fostering technology-enabled startups, facilitating team building for companies, providing opportunities for self-learning to students, and elevating startup ideas.</p>
+    <form id="registrationForm" action="https://formbold.com/s/9k7Rl" method="post">
+      <div class="form-group">
+        <label for="fullName">Full Name:</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+          </div>
+          <input type="text" class="form-control" id="fullName" name="fullName" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+          </div>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="registrationType">Registration Type:</label>
+        <select class="form-control" id="registrationType" name="registrationType" required>
+          <option value="" selected disabled>Select Registration Type</option>
+          <option value="startup">Startup Company Registration - ₹999</option>
+          <option value="developer">Individual Developer Registration - ₹399</option>
+          <option value="student">Student Registration (interested in learning) - ₹599</option>
+          <option value="developerTeam">Developer Team Registration (up to 5 members) - ₹2999</option>
+          <option value="startupTeam">Startup Team Registration (up to 5 members) - ₹3999</option>
+        </select>
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="termsCheck" name="termsCheck" required>
+        <label class="form-check-label" for="termsCheck">I have read and agree to the terms and conditions.</label>
+      </div>
+      <div class="form-group">
+        <label for="paymentAmount">Payment Amount (INR):</label>
+        <input type="text" class="form-control" id="paymentAmount" name="paymentAmount" readonly>
+      </div>
+      <div class="form-group">
+        <label for="accountNumber">Account Number:</label>
+        <input type="text" class="form-control" id="accountNumber" value="190201000942948" readonly>
+      </div>
+      <div class="form-group">
+        <label for="ifscCode">IFSC Code:</label>
+        <input type="text" class="form-control" id="ifscCode" value="FDRL0001902" readonly>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Function to calculate payment amount based on registration type
+    function calculatePayment() {
+      const registrationType = document.getElementById('registrationType').value;
+      let paymentAmount = 0;
+      switch (registrationType) {
+        case 'startup':
+          paymentAmount = 999;
+          break;
+        case 'developer':
+          paymentAmount = 399;
+          break;
+        case 'student':
+          paymentAmount = 599;
+          break;
+        case 'developerTeam':
+          paymentAmount = 2999;
+          break;
+        case 'startupTeam':
+          paymentAmount = 3999;
+          break;
+      }
+      document.getElementById('paymentAmount').value = paymentAmount;
+    }
+
+    // Event listener for registration type change
+    document.getElementById('registrationType').addEventListener('change', calculatePayment);
+
+    // Initial calculation
+    calculatePayment();
+  </script>
+</body>
+</html>
